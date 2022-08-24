@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: sans-serif;
+    background-color: #eeee;
+}
+
+.calci {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(118, 116, 116, 0.933);
+}
+
+.p {
+    box-shadow: 6px 6px 13px #fff, 6px 6px, 13px rgba(0, 0, 0, .16);
+    border-radius: 28px;
+    padding: 16px;
+    display: grid;
+    grid-template-columns: repeat(4, 66px);
+}
+
+input {
+    grid-column: span 4;
+    height: 68px;
+    width: 258px;
+    box-shadow: inset -6px -6px 13px #fff, inset 6px 6px, 13px rgba(0, 0, 0, .16);
+    background-color: rgba(135, 130, 130, 0.933);
+    border: none;
+    border-radius: 32px;
+    color: rgba(26, 25, 25);
+    text-align: end;
+    margin: 40px 0px 30px 0px;
+    padding: 20px;
+    font-size: 40px;
+}
+
+button {
+    box-shadow: inset 6px 6px 13px #fff, inset 6px 6px, 13px rgba(0, 0, 0, .16);
+    background-color: rgba(104, 102, 102, 0.933);
+    background-color: aqua;
+    border: none;
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.equal {
+    width: 120px;
+    border-radius: 42px;
+    box-shadow: inset 6px 6px 13px #fff, inset 6px 6px, 13px rgba(0, 0, 0, .16);
+    background-color: rgba(143, 137, 137, 0.933);
+    background-color: aqua;
+}
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
+<div class="calci">
+
+
+    <div class="p">
+        <input type="text" id="inputext" placeholder="0">
+        <button onclick="calculate(0)"> 0</button>
+        <button onclick="clr()"> c</button>
+        <button onclick="del()"> Del</button>
+        <button onclick="calculate('%')"> %</button>
+
+        <button onclick="calculate('/')"> /</button>
+        <button onclick="calculate(7)">7 </button>
+        <button onclick="calculate(8)"> 8</button>
+        <button onclick="calculate(9)"> 9</button>
+
+        <button onclick="calculate('*')"> *</button>
+        <button onclick="calculate(4)">4</button>
+        <button onclick="calculate(5)"> 5</button>
+        <button onclick="calculate(6)">6</button>
+
+
+        <button onclick="calculate('-')"> -</button>
+        <button onclick="calculate(1)"> 1</button>
+        <button onclick="calculate(2)"> 2</button>
+        <button>3</button>
+
+
+        <button onclick="calculate('+')"> +</button>
+        <button onclick="calculate('.')"> .</button>
+
+        <button class="equal " onclick="Result()"> =</button>
+        <script>
+            let result = document.getElementById("inputext");
+let calculate = (number) => {
+    result.value += number;
+}
+let Result = () => {
+    try {
+        result.value = eval(result.value)
+    } catch (err) {
+        alert("input valid number");
+    }
+}
+
+function clr() {
+    result.value = "";
+}
+
+function del() {
+    result.value = result.value.slice(0, -1);
+
+
+}
+        </script>
+    </div>
+</div>
+
+</body>
+
+</html>
+Footer
+© 2022 GitHub, Inc.
+Footer navigation
+Terms
